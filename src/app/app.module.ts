@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -13,7 +14,8 @@ import { ToolBarComponent } from './componenets/design/tool-bar/tool-bar.compone
 
 
 const appRoutes: Routes = [
-  { path: '', component: IndexComponent, pathMatch: 'full' }
+  { path: '', component: IndexComponent, pathMatch: 'full' },
+  { path: 'design/:width/:height', component: DesignPanelComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

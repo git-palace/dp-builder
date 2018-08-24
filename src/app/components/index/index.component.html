@@ -25,7 +25,7 @@
   </div>
 
   <div class="row m-5 px-5">
-    <div class="card-img col-lg-4 col-6 py-4 px-4" *ngFor="let card of card_arr">
+    <div class="card-img col-lg-4 col-6 py-4 px-4" *ngFor="let card of card_arr" (click)="goToDesignPanel(card.width, card.height)">
       <div class="col-8 mx-auto h-100">
         <div class="row flex-column h-100">
           <img class="img-fluid w-100 mt-auto" [src]="card.path" />
@@ -44,13 +44,13 @@
     <form class="m-auto custom-dimension">
       <div class="form-row align-items-center">
         <div class="col-auto">
-          <button type="submit" class="btn">Custom Dimension</button>
+          <button type="submit" class="btn" (click)="goToDesignPanel()">Custom Dimension</button>
         </div>
 
         <span class="my-auto">&nbsp; = &nbsp;</span>
 
         <div class="col-auto">
-          <input type="number" class="form-control" placeholder="Width" required name="width" min="0">
+          <input type="number" class="form-control" placeholder="Width" required name="width" min="0" [(ngModel)]="c_width">
         </div>
 
         <span class="my-auto">&nbsp; px &nbsp;</span>
@@ -58,7 +58,7 @@
         <span class="my-auto">&times;</span>
 
         <div class="col-auto">
-          <input type="number" class="form-control" placeholder="Height" required name="height" min="0">
+          <input type="number" class="form-control" placeholder="Height" required name="height" min="0" [(ngModel)]="c_height">
         </div>
 
         <span class="my-auto">&nbsp; px</span>

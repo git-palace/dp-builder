@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class IndexComponent implements OnInit {
 
   card_arr: any = [];
+  c_width: any;
+  c_height: any;
 
-  constructor() {
+  constructor(private router: Router) {
     this.card_arr = [
       {
         path: '/assets/images/card-previews/Flyer.jpg',
@@ -46,6 +49,17 @@ export class IndexComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  goToDesignPanel(width = null, height = null) {
+    if (width)
+      this.c_width = width;
+
+    if (height)
+      this.c_height = height;
+
+    if (this.c_width && this.c_height)
+      this.router.navigate([`design/${this.c_width}/${this.c_height}`])
   }
 
 }
