@@ -1,0 +1,30 @@
+.input-group {
+    .input-group-addon {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: #fff;
+        border-right: none;
+        padding-right: 0;
+        border: none;
+    }
+
+    input {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: none;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.template-list {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        border: 1px solid #000;
+    }
+}

@@ -1,0 +1,17 @@
+nav {
+    background-color: #5fd5fb;
+
+    .navbar-brand {
+        img {
+            height: 65px;
+        }
+    }
+
+    ul.navbar-nav li.nav-item > a {
+        color: #fff;
+
+        &:hover {
+            color: #8d3b92;
+        }
+    }
+}

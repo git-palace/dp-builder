@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light px-5">
-  <a class="navbar-brand" href="/">
+  <a class="navbar-brand invisible" href="/">
     <img src="/assets/images/logo.png" alt="logo" />
   </a>
 
@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbar-menu">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">New Design</a>
+        <a class="nav-link" href="#">Photo Design</a>
       </li>
     </ul>
   </div>
@@ -24,45 +24,71 @@
     </div>
   </div>
 
-  <div class="row m-5 px-5">
-    <div class="card-img col-lg-4 col-6 py-4 px-4" *ngFor="let card of card_arr" (click)="goToDesignPanel(card.width, card.height)">
-      <div class="col-8 mx-auto h-100">
-        <div class="row flex-column h-100">
-          <img class="img-fluid w-100 mt-auto" [src]="card.path" />
+  <ng-container *ngIf="!custom_dimension_view">
+
+    <div class="row m-5 px-5">
+
+      <div class="card-img col-lg-4 col-6 py-4 px-4" *ngFor="let card of card_arr" (click)="goToDesignPanel(card.width, card.height)">
+        <div class="col-8 mx-auto h-100">
+          <div class="row flex-column h-100">
+            <img class="img-fluid w-100 mt-auto" [src]="card.path" />
+          </div>
         </div>
+
+        <p class="name col-12 text-center mt-3">{{card.name}}</p>
+
+        <a class="size">
+          <span>{{card.width}}px x {{card.height}}px</span>
+        </a>
       </div>
 
-      <p class="name col-12 text-center mt-3">{{card.name}}</p>
-
-      <a class="size">
-        <span>{{card.width}}px x {{card.height}}px</span>
-      </a>
     </div>
-  </div>
 
-  <div class="row m-5 px-5">
-    <form class="m-auto custom-dimension">
-      <div class="form-row align-items-center">
-        <div class="col-auto">
-          <button type="submit" class="btn" (click)="goToDesignPanel()">Custom Dimension</button>
-        </div>
+    <div class="row m-5 px-5" *ngIf="!custom_dimension_view">
 
-        <span class="my-auto">&nbsp; = &nbsp;</span>
-
-        <div class="col-auto">
-          <input type="number" class="form-control" placeholder="Width" required name="width" min="0" [(ngModel)]="c_width">
-        </div>
-
-        <span class="my-auto">&nbsp; px &nbsp;</span>
-
-        <span class="my-auto">&times;</span>
-
-        <div class="col-auto">
-          <input type="number" class="form-control" placeholder="Height" required name="height" min="0" [(ngModel)]="c_height">
-        </div>
-
-        <span class="my-auto">&nbsp; px</span>
+      <div class="my-5 col text-center">
+        <button class="btn custom-dimension" (click)="custom_dimension_view = true">Custom Dimension</button>
       </div>
-    </form>
-  </div>
+
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="custom_dimension_view">
+
+    <div class="row m-5 px-5">
+
+      <form class="m-auto col-12">
+        <div class="form-row align-items-center">
+          <div class="col-auto ml-auto">
+            <input type="number" class="form-control input_width" placeholder="Width" required name="width" min="0" [(ngModel)]="c_width">
+          </div>
+
+          <span class="my-auto">&times;</span>
+
+          <div class="col-auto">
+            <input type="number" class="form-control input_height" placeholder="Height" required name="height" min="0" [(ngModel)]="c_height">
+          </div>
+
+          <span class="my-auto">&nbsp; (px)</span>
+
+          <div class="col-auto mr-auto">
+            <button type="submit" class="btn custom-dimension" (click)="goToDesignPanel()">Create Design</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="col-12">
+        <p class="mx-auto text-center my-3">
+          <a class="go-back" (click)="custom_dimension_view = false">
+            <span>
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </span>&nbsp; Choose other doctype</a>
+        </p>
+      </div>
+
+    </div>
+
+  </ng-container>
+
 </div>

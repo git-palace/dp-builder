@@ -1,9 +1,9 @@
 nav {
-    background-color: #de5f3b;
+    background-color: #8d3b92;
 
     .navbar-brand {
         img {
-            height: 135px;
+            height: 65px;
         }
     }
 
@@ -40,19 +40,22 @@ nav {
     }
 }
 
-form.custom-dimension {
-    input {
-        width: 100px;
-    }
+button.custom-dimension {
+    cursor: pointer;
+    background-color: #8d3b92;
+    border-color: #8d3b92;
+    color: #fff;
 
-    button {
-        cursor: pointer;
-        background-color: #8d3b92;
-        border-color: #8d3b92;
-        color: #fff;
-
-        &:hover {
-            opacity: .75;
-        }
+    &:hover {
+        opacity: .75;
     }
+}
+
+input.input_width,
+input.input_height {
+    width: 100px;
+}
+
+a.go-back {
+    cursor: pointer;
 }

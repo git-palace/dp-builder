@@ -11,6 +11,7 @@ export class IndexComponent implements OnInit {
   card_arr: any = [];
   c_width: any;
   c_height: any;
+  custom_dimension_view: boolean = false;
 
   constructor(private router: Router) {
     this.card_arr = [
