@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light px-5">
+  <a class="navbar-brand" href="/">
+    <img src="/assets/images/logo.png" alt="logo" />
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar-menu">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">New Design</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4 mx-auto text-center">
+      <img class="img-fluid" src="/assets/images/logo.png" alt="logo" />
+    </div>
+  </div>
+
+  <div class="row m-5 px-5">
+    <div class="card-img col-lg-4 col-6 py-4 px-4" *ngFor="let card of card_arr">
+      <div class="col-8 mx-auto h-100">
+        <div class="row flex-column h-100">
+          <img class="img-fluid w-100 mt-auto" [src]="card.path" />
+        </div>
+      </div>
+
+      <p class="name col-12 text-center mt-3">{{card.name}}</p>
+
+      <a class="size">
+        <span>{{card.width}}px x {{card.height}}px</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="row m-5 px-5">
+    <form class="m-auto custom-dimension">
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <button type="submit" class="btn">Custom Dimension</button>
+        </div>
+
+        <span class="my-auto">&nbsp; = &nbsp;</span>
+
+        <div class="col-auto">
+          <input type="number" class="form-control" placeholder="Width" required name="width" min="0">
+        </div>
+
+        <span class="my-auto">&nbsp; px &nbsp;</span>
+
+        <span class="my-auto">&times;</span>
+
+        <div class="col-auto">
+          <input type="number" class="form-control" placeholder="Height" required name="height" min="0">
+        </div>
+
+        <span class="my-auto">&nbsp; px</span>
+      </div>
+    </form>
+  </div>
+</div>

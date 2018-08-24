@@ -1,0 +1,58 @@
+nav {
+    background-color: #de5f3b;
+
+    .navbar-brand {
+        img {
+            height: 135px;
+        }
+    }
+
+    ul.navbar-nav li.nav-item a {
+        color: #fff;
+    }
+}
+
+.card-img {
+    cursor: pointer;
+    position: relative;
+
+    .size {
+        position: absolute;
+        color: #fff;
+        left: 0;
+        right: 0;
+        bottom: -2.5em;
+        opacity: 0;
+        text-align: center;
+        transition: ease-in .5s;
+    }
+
+    &:hover .size {
+        opacity: 1;
+    }
+    
+    &:hover img {
+        box-shadow: 0px 0px 40px 5px #8d3b92;
+    }
+
+    .name {
+        color: #ec298f;
+    }
+}
+
+form.custom-dimension {
+    input {
+        width: 100px;
+    }
+
+    button {
+        cursor: pointer;
+        background-color: #8d3b92;
+        border-color: #8d3b92;
+        color: #fff;
+
+        &:hover {
+            opacity: .75;
+        }
+    }
+}
