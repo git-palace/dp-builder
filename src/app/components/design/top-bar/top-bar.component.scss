@@ -1,9 +1,11 @@
 nav {
     background-color: #5fd5fb;
+    height: 75px;
+    overflow: hidden;
 
     .navbar-brand {
         img {
-            height: 65px;
+            height: 50px;
         }
     }
 

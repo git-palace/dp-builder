@@ -1,92 +1,52 @@
 <div class="row h-100">
   <div class="col-auto">
     <div class="row flex-column element-types h-100">
-      <button>
+      <button *ngFor="let element_title of element_title_arr; let ele_idx = index;" [class.active]="ele_idx == selected_ele_idx"
+        [class.active-next]="ele_idx == selected_ele_idx + 1" (click)="selected_ele_idx = ele_idx">
         <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Banners</span>
-      </button>
-
-      <button class="active">
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Text</span>
-      </button>
-
-      <button class="active-next">
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Background</span>
-      </button>
-
-      <button>
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Photos</span>
-      </button>
-
-      <button>
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Box Layers</span>
-      </button>
-
-      <button>
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Listings</span>
-      </button>
-
-      <button>
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Grids</span>
-      </button>
-
-      <button>
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Widgets</span>
-      </button>
-
-      <button>
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Elements</span>
-      </button>
-
-      <button>
-        <span class="icon"><i class="fa fa-font" aria-hidden="true"></i></span>
-        <span class="text">Templates</span>
+        <span class="text">{{element_title}}</span>
       </button>
     </div>
   </div>
 
   <div class="col element-list-container">
     <div class="row flex-column">
-      <h4 class="my-3 text-center title">Text Templates</h4>
 
-      <div class="input-group px-3 my-3">
-        <div class="input-group-addon">
-          <span class="input-group-text" id="search-addon">
-            <i class="fa fa-search"></i>
-          </span>
-        </div>
-        <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
-      </div>
+      <ng-container *ngIf="selected_ele_idx == 1">
+        <h4 class="my-3 text-center title">Text Templates</h4>
 
-      <div class="element-list w-100 mt-3">
-        <div class="col-12 h1-tag">
-          <p>Email title like H1 tag</p>
+        <div class="input-group px-3 my-3">
+          <div class="input-group-addon">
+            <span class="input-group-text" id="search-addon">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
         </div>
 
-        <div class="col-12 h3-tag">
-          <p>Sub title 1 (h3 tag)</p>
+        <div class="element-list w-100 mt-3">
+          <div class="col-12 h1-tag">
+            <p>Email title like H1 tag</p>
+          </div>
+
+          <div class="col-12 h3-tag">
+            <p>Sub title 1 (h3 tag)</p>
+          </div>
+
+          <div class="col-12 h6-tag">
+            <p>Sub title 2 (h6 tag)</p>
+          </div>
+
+          <div class="col-12 p-tag">
+            <p>Body // paragraph //</p>
+          </div>
+
+          <div class="col-12">
+            <p>Captions "quaotations"</p>
+          </div>
         </div>
 
-        <div class="col-12 h6-tag">
-          <p>Sub title 2 (h6 tag)</p>
-        </div>
-
-        <div class="col-12 p-tag">
-          <p>Body // paragraph //</p>
-        </div>
-
-        <div class="col-12">
-          <p>Captions "quaotations"</p>
-        </div>
-      </div>
+      </ng-container>
     </div>
   </div>
 </div>

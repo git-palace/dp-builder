@@ -26,16 +26,16 @@
 
   <ng-container *ngIf="!custom_dimension_view">
 
-    <div class="row m-5 px-5">
+    <div class="row mx-5 px-5">
 
       <div class="card-img col-lg-4 col-6 py-4 px-4" *ngFor="let card of card_arr" (click)="goToDesignPanel(card.width, card.height)">
-        <div class="col-8 mx-auto h-100">
-          <div class="row flex-column h-100">
-            <img class="img-fluid w-100 mt-auto" [src]="card.path" />
+        <div class="col-8 mx-auto">
+          <div class="row flex-column px-3">
+            <img class="img-fluid w-100" [src]="card.path" />
           </div>
         </div>
 
-        <p class="name col-12 text-center mt-3">{{card.name}}</p>
+        <p class="name col-12 text-center mt-3 mb-2">{{card.name}}</p>
 
         <a class="size">
           <span>{{card.width}}px x {{card.height}}px</span>
@@ -44,9 +44,9 @@
 
     </div>
 
-    <div class="row m-5 px-5" *ngIf="!custom_dimension_view">
+    <div class="row mx-5 px-5" *ngIf="!custom_dimension_view">
 
-      <div class="my-5 col text-center">
+      <div class="my-3 col text-center">
         <button class="btn custom-dimension" (click)="custom_dimension_view = true">Custom Dimension</button>
       </div>
 
