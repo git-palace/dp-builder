@@ -18,7 +18,7 @@ export class IndexComponent implements OnInit {
       {
         path: '/assets/images/card-previews/Flyer.jpg',
         name: 'Flyer',
-        width: 150,
+        width: 750,
         height: 1200
       }, {
         path: '/assets/images/card-previews/News Letter.jpg',

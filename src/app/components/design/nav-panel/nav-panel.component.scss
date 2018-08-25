@@ -1,8 +1,8 @@
 .nav-pills {
-    border-right: 1px solid #de5f3b;
     a {
         margin-bottom: 0.3em;
-        border: 1px solid #de5f3b;
+        border-top: 1px solid #de5f3b;
+        border-bottom: 1px solid #de5f3b;
 
         &:hover {
             background-color: #de5f3b;

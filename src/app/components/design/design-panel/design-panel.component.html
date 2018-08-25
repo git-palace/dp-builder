@@ -1,8 +1,8 @@
 <app-top-bar></app-top-bar>
 
-<div class="row mx-auto">
-  <div class="col-xl-3 col-lg-4 col-12">
-    <div class="row">
+<div class="row mx-auto design-panel">
+  <div class="col-xl-3 col-lg-4 col-12 left-panel">
+    <div class="row h-100">
       <div class="col">
         <app-nav-panel></app-nav-panel>
       </div>
@@ -13,7 +13,13 @@
     </div>
   </div>
 
-  <div class="col-9">
+  <div class="col-xl-9 col-lg-8 col-12 main-panel">
     <app-tool-bar></app-tool-bar>
+
+    <div class="row">
+      <div class="col-auto m-auto">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
   </div>
 </div>

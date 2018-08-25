@@ -1,0 +1,16 @@
+.row {
+    border-top: 1px solid #5fd5fb;
+    border-bottom: 1px solid #5fd5fb;
+}
+a.btn {
+    cursor: pointer;
+    margin: auto;
+    border: 1px solid #5fd5fb;
+    color: #5fd5fb;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #5fd5fb;
+        color: #fff;
+    }
+}
