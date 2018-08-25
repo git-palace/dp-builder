@@ -9,14 +9,7 @@ app-top-bar {
     height: 100vh;
     overflow: auto;
     padding-top: 91px;
-
-    .left-panel {
-        border-right: 1px solid #e78038;
-
-        .col {
-            border-right: 1px solid #e78038;
-        }
-    }
+    background-color: #edf0f2;
 
     .main-panel .row {
         height: calc(100% - 72px);

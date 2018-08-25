@@ -7,10 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './components/index/index.component';
 import { DesignPanelComponent } from './components/design/design-panel/design-panel.component';
-import { NavPanelComponent } from './components/design/nav-panel/nav-panel.component';
-import { TemplatesPanelComponent } from './components/design/templates-panel/templates-panel.component';
 import { TopBarComponent } from './components/design/top-bar/top-bar.component';
 import { ToolBarComponent } from './components/design/tool-bar/tool-bar.component';
+import { TemplatesPanelComponent } from './components/design/templates-panel/templates-panel.component';
 
 
 const appRoutes: Routes = [
@@ -23,10 +22,9 @@ const appRoutes: Routes = [
     AppComponent,
     IndexComponent,
     DesignPanelComponent,
-    NavPanelComponent,
-    TemplatesPanelComponent,
     TopBarComponent,
-    ToolBarComponent
+    ToolBarComponent,
+    TemplatesPanelComponent
   ],
   imports: [
     BrowserModule,

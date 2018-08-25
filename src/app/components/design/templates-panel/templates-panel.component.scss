@@ -1,30 +1,109 @@
-.input-group {
-    .input-group-addon {
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        background-color: #fff;
-        border-right: none;
-        padding-right: 0;
-        border: none;
-    }
+.element-types {
+    background-color: #334059;
 
-    input {
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+    button {
+        background-color: transparent;
+        color: #ffffff;
         border: none;
+        cursor: pointer;
+        position: relative;
+        padding: 10px 5px;
+        text-align: center;
+
+        &:hover,
+        &.active {
+            background-color: #263147;
+        }
 
         &:focus {
+            border: none;
             outline: none;
-            box-shadow: none;
+        }
+
+        &:not(:first-child):not(.active):not(.active-next):not(:hover)::before{
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            top: 0;
+            content: ' ';
+            border-bottom: 1px solid #404d66;
+        }
+
+        span {
+            display: block;
+            width: 70px;
+            &.icon {
+                font-size: 1.25em;
+            }
+            &.text {
+                font-size: .75em;
+            }
         }
     }
 }
 
-.template-list {
-    list-style: none;
-    padding-left: 0;
+.element-list-container {
+    background-color: #263147;
 
-    li {
-        border: 1px solid #000;
+    .title {
+        color: #ffffff;
+    }
+
+    .input-group {
+        .input-group-addon {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+        }
+
+        .form-control {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: transparent;
+
+            &:focus {
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .element-list {
+        & > div {
+            padding: 15px;
+            color: #fff;
+            cursor: pointer;
+
+            &.h1-tag {
+                font-size: 1.4em;
+            }
+
+            &.h3-tag {
+                font-size: 1.35em;
+            }
+
+            &.h6-tag {
+                font-size: 1.25em;
+            }
+
+            &.p-tag {
+                font-size: 1em;
+            }
+
+            &::after {
+                content: ' ';
+                position: absolute;
+                border-bottom: 1px solid #404d66;
+                left: 10px;
+                bottom: 0px;
+                right: 10px;
+            }
+
+            p {
+                margin: 10px 0px;
+            }
+        }
     }
 }
