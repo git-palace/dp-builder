@@ -1,7 +1,6 @@
 nav {
     background-color: #5fd5fb;
     height: 75px;
-    overflow: hidden;
 
     .navbar-brand {
         img {
@@ -15,5 +14,11 @@ nav {
         &:hover {
             color: #8d3b92;
         }
+    }
+
+    span.social {
+        width: 20px;
+        display: inline-block;
+        text-align: right;
     }
 }
